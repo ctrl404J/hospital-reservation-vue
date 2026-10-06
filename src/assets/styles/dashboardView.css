@@ -1,0 +1,107 @@
+.dashboard-title-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#dashboard-title-sub {
+    color: #8c92a4;
+}
+
+#add-patient {
+    margin-left: auto;
+}
+
+.dashboard-info-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ebeef5;
+    gap: 16px;
+}
+
+.info-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ebeef5;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+}
+
+.card-icon {
+    margin: 15px;
+}
+
+.card-detail {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 40px;
+}
+
+
+.dashboard-search-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ebeef5;
+    border-radius: 12px 12px 0 0;
+    padding: 15px;
+}
+
+.dashboard-input-container {
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.treatment-status-area {
+    display: flex;
+    justify-content: center;
+    padding: 13px;
+    background-color: #fff;
+    border: 1px solid #ebeef5;
+}
+
+.treatment-status {
+    margin-right: auto;
+    margin-left: 15px;
+}
+
+#treatment-status-notice {
+    color: #8c92a4;
+    font-size: 14px;
+}
+
+.pagination-area {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  align-items: center;
+  padding: 17px 25px 17px 25px;
+  border-radius: 0 0 12px 12px;
+}
+
+#dashboard-summary-info {
+    color: #8c92a4;
+    font-size: 14px;
+}
+.pagination {
+    margin-left: auto;
+}
+
+.dashboard-warning-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    line-height: 1;
+    margin-top: 26px;
+    color: #606266;
+    font-size: 13px;
+    gap: 8px;
+}
