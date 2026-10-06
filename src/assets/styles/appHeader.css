@@ -1,0 +1,21 @@
+    .header-container {
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        border-bottom: 1px solid #dcdfe6;;
+    }
+
+    .reception-btn {
+        padding: 20px;
+    }
+
+    .header-info-box {
+        margin-left: auto;
+        padding-left: 20px;
+    }
+
+    .logout-aria {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
