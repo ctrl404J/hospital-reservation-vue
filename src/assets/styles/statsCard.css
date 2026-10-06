@@ -1,0 +1,73 @@
+.stats-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 24px;                             
+  width: 100%;
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+
+.stats-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 28px;
+  background-color: #ffffff;
+  border: 1px solid #ebeef5;
+  border-radius: 12px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02); 
+  min-width: 0;
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.grey-bg { background-color: #f4f6f9; color: #4a5568; }
+.blue-bg { background-color: #f0f7ff; }
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card-label {
+  font-size: 14px;
+  color: #8c92a4;
+  font-weight: 500;
+}
+
+.card-value-group {
+  display: flex;
+  align-items: baseline;
+  white-space: nowrap;
+}
+
+.card-number {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  color: #1a1f36;
+}
+.text-blue { color: #0091ff; }
+
+.card-unit {
+  font-size: 14px;
+  color: #1a1f36;
+  font-weight: 500;
+  margin-left: 4px;
+  margin-right: 12px;
+}
+
+.card-subtext {
+  font-size: 12px;
+  color: #8c92a4;
+  font-weight: 400;
+}
