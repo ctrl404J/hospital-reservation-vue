@@ -1,14 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import DashboardView from '../views/DashboardView.vue'
 import PatientsView from '../views/PatientsView.vue'
-import ScheduleView from '../views/ScheduleView.vue'
-import PaymentView from '../views/PaymentView.vue'
+import SchedulesView from '../views/SchedulesView.vue'
+import PaymentsView from '../views/PaymentsView.vue'
 
 const routes = [
   {path: '/', component :DashboardView},
   {path: '/Patients', component :PatientsView},
-  {path: '/Schedules', component :ScheduleView},
-  {path: '/Payments', component :PaymentView},
+  {path: '/Schedules', component :SchedulesView},
+  {path: '/Payments', component :PaymentsView},
 ]
 
 const router = createRouter({
