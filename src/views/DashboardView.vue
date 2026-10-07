@@ -2,7 +2,7 @@
     <div class="dashboard-container">
         <div class="dashboard-title-area">
             <div class="dashboard-title-box">
-                <h2><el-icon><UserFilled /></el-icon> 오늘의 환자 진료 대기장부</h2>
+                <h2><el-icon><DataBoard /></el-icon> 오늘의 환자 진료 대기장부</h2>
                 <p id="dashboard-title-sub">오늘 예약한 환자의 진료 대기 현황을 한눈에 확인하세요.</p>
             </div>
             <el-button size="large" :icon="Plus" type="primary" id="add-patient">환자등록</el-button>
@@ -50,7 +50,7 @@
 
 <script setup>
 import '@/assets/styles/dashboardView.css';
-import { Plus, UserFilled, Search, Refresh, Calendar, InfoFilled } from '@element-plus/icons-vue' 
+import { Plus, DataBoard, Search, Refresh, InfoFilled } from '@element-plus/icons-vue' 
 import StatsCard from '@/components/StatsCard.vue';
 import Dashboard from '@/components/Dashboard.vue';
 </script>
