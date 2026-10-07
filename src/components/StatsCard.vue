@@ -52,7 +52,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 <script setup>
@@ -64,6 +63,3 @@ import {
   CircleCheck
 } from '@element-plus/icons-vue'
 </script>
-<style scoped>
-
-</style>

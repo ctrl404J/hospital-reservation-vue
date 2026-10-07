@@ -7,58 +7,60 @@
             </div>
             <el-button size="large" :icon="Plus" type="primary" id="add-patient">환자등록</el-button>
         </div>
-        <div class="patients-search-area">
-            <div class="patients-input-container">
-                <el-input v-model="input4" size="large" class="responsive-input" placeholder="환자명, 환자번호 또는 연락처 검색">
-                <template #prefix>
-                    <el-icon class="el-input__icon"><search /></el-icon>
-                </template>
-                </el-input>
+        <div class="patients-board-container">
+            <div class="patients-search-area">
+                <div class="patients-input-container">
+                    <el-input v-model="input4" size="large" class="responsive-input" placeholder="환자명, 환자번호 또는 연락처 검색">
+                    <template #prefix>
+                        <el-icon class="el-input__icon"><search /></el-icon>
+                    </template>
+                    </el-input>
+                </div>
+
+                <el-select
+                    v-model="value"
+                    clearable
+                    placeholder="성별·전체"
+                    style="width: 150px"
+                    size="large"
+                >
+                    <el-option
+                    v-for="item in genderOptions"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value"
+                    />
+                </el-select>
+
+                <el-select
+                    v-model="value"
+                    clearable
+                    placeholder="내원여부·전체"
+                    style="width: 150px"
+                    size="large"
+                >
+                    <el-option
+                    v-for="item in visitOptions"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value"
+                    />
+                </el-select>
+
+                <el-button size="large" :icon="Refresh" type="primary">검색</el-button>
+                <el-button size="large" :icon="Refresh">초기화</el-button>
+            </div>
+            <div class="treatment-status-area">
+                <div class="treatment-status"><strong>전체환자 238명</strong></div>
+                <div id="treatment-status-notice">환자번호 내림차순</div>
             </div>
 
-              <el-select
-                v-model="value"
-                clearable
-                placeholder="성별·전체"
-                style="width: 150px"
-                size="large"
-            >
-                <el-option
-                v-for="item in genderOptions"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value"
-                />
-            </el-select>
+            <Dashboard />
 
-            <el-select
-                v-model="value"
-                clearable
-                placeholder="내원여부·전체"
-                style="width: 150px"
-                size="large"
-            >
-                <el-option
-                v-for="item in visitOptions"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value"
-                />
-            </el-select>
-
-            <el-button size="large" :icon="Refresh" type="primary">검색</el-button>
-            <el-button size="large" :icon="Refresh">초기화</el-button>
-        </div>
-        <div class="treatment-status-area">
-            <div class="treatment-status"><strong>전체환자 238명</strong></div>
-            <div id="treatment-status-notice">환자번호 내림차순</div>
-        </div>
-
-        <Dashboard />
-
-        <div class="pagination-area">
-            <div id="patients-summary-info">전체 248명 중 1–10명 표시 </div>
-            <el-pagination class="pagination" layout="prev, pager, next" :total="100" />
+            <div class="pagination-area">
+                <div id="patients-summary-info">전체 248명 중 1–10명 표시 </div>
+                <el-pagination class="pagination" layout="prev, pager, next" :total="100" />
+            </div>
         </div>
         <div class="warning-board">
             <el-icon><InfoFilled /></el-icon> 
@@ -103,6 +105,11 @@ const visitOptions = [
 
 </script>
 <style scoped>
+
+.patients-board-container {
+    border: 1px solid #ebeef5;
+    border-radius: 12px 12px 12px 12px;
+}
 
 .patients-title-area {
     display: flex;
