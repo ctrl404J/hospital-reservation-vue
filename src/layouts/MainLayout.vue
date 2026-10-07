@@ -4,7 +4,7 @@
       <el-header class="common-header"><AppHeader /></el-header>
       <el-container>
         <el-aside><AppSidebar /></el-aside>
-        <el-main class="common-main"><DashboardView /></el-main>
+        <el-main class="common-main"><RouterView /></el-main>
       </el-container>
     </el-container>
   </div>
@@ -14,7 +14,6 @@
 import '@/assets/styles/mainLayout.css';
 import AppHeader from '@/components/AppHeader.vue';
 import AppSidebar from '@/components/AppSidebar.vue';
-import DashboardView from '@/views/DashboardView.vue';
 </script>
 <style scoped>
 

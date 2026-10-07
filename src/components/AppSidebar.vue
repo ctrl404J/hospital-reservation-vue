@@ -6,19 +6,19 @@
         <el-menu default-active="2" class="menu">
           <el-menu-item index="1">
             <el-icon><DataBoard /></el-icon>
-            <span>대시보드</span>
+            <RouterLink to="/">대시보드</RouterLink>
           </el-menu-item>
           <el-menu-item index="2">
             <el-icon><User /></el-icon>
-            <span>환자목록</span>
+             <RouterLink to="/patients">환자목록</RouterLink>
           </el-menu-item>
           <el-menu-item index="3">
             <el-icon><Calendar /></el-icon>
-            <span>의사일정</span>
+            <RouterLink to="/schedules">의사일정</RouterLink>
           </el-menu-item>
           <el-menu-item index="4">
             <el-icon><CreditCard /></el-icon>
-            <span>진료수납</span>
+             <RouterLink to="/payments">진료수납</RouterLink>
           </el-menu-item>
         </el-menu>
       </el-col>
