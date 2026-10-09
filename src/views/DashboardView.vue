@@ -34,7 +34,21 @@
                 <el-button size="large" :icon="Refresh">새로고침</el-button>
             </div>
             <div class="treatment-status-area">
-                <div class="treatment-status"><strong>진료현황 6명</strong></div>
+                <div class="treatment-status">
+                    <strong>진료현황</strong>
+                    <el-tag
+                            round
+                            style="
+                            background-color: #ecf5ff; /* 연한 살구/미색 배경색 */
+                            border-color: #ecf5ff;     /* 테두리 선을 배경과 통일해서 없앰 */
+                            color: #409eff;            /* 직관적인 갈색 글자색 */
+                            font-weight: 500;          /* 글자 두께 선명하게 */
+                            margin-left: 12px;
+                            "
+                        >
+                        <strong>6명</strong>
+                        </el-tag>
+                </div>
                 <div id="treatment-status-notice">일부 환자의 상태를 예약시간순으로 표시합니다.</div>
             </div>
             <Dashboard />
