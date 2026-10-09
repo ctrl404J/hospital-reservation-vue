@@ -61,7 +61,7 @@
                             margin-left: 12px;
                             "
                         >
-                            6건
+                        <strong>6건</strong>
                         </el-tag>
                     </div>
                     <div id="treatment-status-notice">10. 07.  · 진료시간순</div>
