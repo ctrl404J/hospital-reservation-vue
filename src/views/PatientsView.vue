@@ -64,7 +64,7 @@
         </div>
         <div class="warning-board">
             <el-icon><InfoFilled /></el-icon> 
-            <div> 환자정보는 지료목적에 한해 열람해 주세요.</div>
+            <div> 환자정보는 치료목적에 한해 열람해 주세요.</div>
         </div>
   </div>
 </template>

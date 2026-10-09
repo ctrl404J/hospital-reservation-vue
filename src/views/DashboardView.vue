@@ -19,6 +19,7 @@
                     format="YYYY. MM. DD. (ddd)"
                     value-format="YYYY-MM-DD"
                     :clearable="false"
+                    size="large"
                     class="custom-date-picker"
                     />
                     <el-button class="today-btn" size="small" @click="moveToToday" style="margin-left: 10px;">오늘</el-button>
