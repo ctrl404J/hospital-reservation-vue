@@ -1,7 +1,7 @@
 <template>
-    <div class="dashboard-container">
+    <div>
         <div class="dashboard-title-area">
-            <div class="dashboard-title-box">
+            <div>
                 <h2><el-icon><DataBoard /></el-icon> 오늘의 환자 진료 대기장부</h2>
                 <p id="dashboard-title-sub">오늘 예약한 환자의 진료 대기 현황을 한눈에 확인하세요.</p>
             </div>
@@ -27,7 +27,7 @@
                 <div class="dashboard-input-container">
                     <el-input v-model="input4" size="large" class="responsive-input" placeholder="환자명 또는 환자번호 검색">
                     <template #prefix>
-                        <el-icon class="el-input__icon"><search /></el-icon>
+                        <el-icon class="el-input__icon"><Search /></el-icon>
                     </template>
                     </el-input>
                 </div>
@@ -45,7 +45,7 @@
         </div>
         <div class="dashboard-warning-area">
             <el-icon><InfoFilled /></el-icon> 
-            <div> 환자정보는 지료목적에 한해 열람해 주세요.</div>
+            <div> 환자정보는 진료목적에 한해 열람해 주세요.</div>
         </div>
   </div>
 </template>
