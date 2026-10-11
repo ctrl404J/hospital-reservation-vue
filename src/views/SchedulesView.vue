@@ -1,74 +1,106 @@
 <template>
     <div class="schedules-container">
         <div class="schedules-title-area">
-            <div class="title-box">
+            <div>
                 <h2><el-icon><Calendar /></el-icon> 의사일정</h2>
-                <p style="color: #8c92a4;">등록된 환자의 기본 정보와 최근 내원 기록을 한눈에 확인하세요.</p>
+                <p id="patients-title-sub">의료진의 주간 진료 일정과 예약 가능 시간을 확인하고 관리하세요.</p>
             </div>
             <el-button size="large" :icon="Plus" type="primary" id="add-patient">환자등록</el-button>
         </div>
-        
         <div class="schedules-board-container">
             <div>
                 <FullCalendar :options="calendarOptions" />
-                <!-- ★ -->
-                 <!-- 2. Element Plus 다이얼로그 모달 창 -->
+                 <!-- Element Plus 다이얼로그 모달 창 -->
                     <el-dialog
-                    v-model="dialogVisible"
-                    title="새 일정 추가"
-                    width="400px"
-                    :before-close="handleBeforeClose"
-                    >
-                    <el-form label-position="top">
-                        <el-form-item label="일정 내용">
-                        <el-input 
-                            v-model="eventTitle" 
-                            placeholder="일정 내용을 입력하세요" 
-                            clearable
-                            @keyup.enter="handleSaveEvent" 
-                        />
-                        </el-form-item>
-                        <el-form-item label="선택된 시간">
-                        <p class="selected-time-text">{{ formattedTimeRange }}</p>
-                        </el-form-item>
-                    </el-form>
+                      v-model="dialogVisible"
+                      title="새 일정 추가"
+                      width="400px"
+                      :before-close="handleBeforeClose"
+                      >
+                      <el-form label-position="top">
+                          <el-form-item label="일정 내용">
+                          <el-input 
+                              v-model="eventTitle" 
+                              placeholder="일정 내용을 입력하세요" 
+                              clearable
+                              @keyup.enter="handleSaveEvent" 
+                          />
+                          </el-form-item>
+                          <el-form-item label="선택된 시간">
+                          <p class="selected-time-text">{{ formattedTimeRange }}</p>
+                          </el-form-item>
+                      </el-form>
 
-                    <template #footer>
-                        <div class="dialog-footer">
-                        <el-button @click="handleCancel">취소</el-button>
-                        <el-button type="primary" :disabled="!eventTitle.trim()" @click="handleSaveEvent">
-                            저장
-                        </el-button>
-                        </div>
-                    </template>
+                      <template #footer>
+                          <div class="dialog-footer">
+                          <el-button @click="handleCancel">취소</el-button>
+                          <el-button type="primary" :disabled="!eventTitle.trim()" @click="handleSaveEvent">
+                              저장
+                          </el-button>
+                          </div>
+                      </template>
                     </el-dialog>
-                <!-- ★ -->
+                 <div id="schedules-summary-info">18:00　진료 종료 · 토·일요일 휴진 · 10. 09. 한글날 특별 진료 (예시)</div>
             </div>
-
-            <div class="daily-notice-box">
+            
+            <div class="daily-notice-container">
                 <div>
-                    <div>오늘의 일정</div>
-                    <p>2026.10.07(수)</p>
+                    <div><strong>오늘의 일정</strong></div>
+                    <p class="notice-subinfo">2026.10.07(수)</p>
                 </div>
                 <div>
-                    <div>김닥터</div>
-                    <div>정형외과ㆍ진료실201</div>
-                    <div>정상 진료</div>
+                    <h3 style="margin-bottom: 5px;"><strong>김닥터</strong></h3>
+                      <div class="notice-subinfo">정형외과ㆍ진료실201</div>
+                      <div class="payments-status">
+                          <el-tag
+                              round
+                              style="
+                              background-color: #ecf5ff;
+                              border-color: #ecf5ff;
+                              color: #409eff;
+                              font-weight: 500;
+                              "
+                          >
+                          <strong>정상 진료</strong>
+                          </el-tag>
+                      </div>
+                      <br>
                 </div>
-                <hr>
-                <div>
-                    <div>진료시간ㆍ총8시간</div>
-                    <div>오전 외래<span>09:00-12:00</span></div>
-                    <div>점심시간<span>12:00-13:00</span></div>
-                    <div>오후 외래<span>13:00-18:00</span></div>
+                <div class="notice-time-area">
+                  <div class="notice-time-row time-header-row">
+                    <span class="label">진료 시간 · </span>
+                    <span class="value">총 8시간</span>
+                  </div>
+                  <div class="notice-time-row">
+                    <span class="label">오전 외래</span>
+                    <span class="value">09:00–12:00</span>
+                  </div>
+                  <div class="notice-time-row time-muted-row">
+                    <span class="label">점심시간</span>
+                    <span class="value">12:00–13:00</span>
+                  </div>
+                  <div class="notice-time-row">
+                    <span class="label">오후 외래</span>
+                    <span class="value">13:00–18:00</span>
+                  </div>
                 </div>
-                <div>
-                    <div>예약환자<span>26명</span></div>
-                    <div>예약가능<span>16명</span></div>
-                    <p>오전 6명ㆍ오후10명 추가 가능</p>
-                    <p>일일 예약 정원 42명</p>
+                <div class="schedules-notice-smallbox">
+                  <div class="schedules-notice-box1">
+                  <div class="notice-box-row patient-row">
+                    <span class="label">예약 환자</span>
+                    <span class="value"><strong>26명</strong></span>
+                  </div>
+                  <div class="notice-box-row available-row">
+                    <span class="label">예약 가능</span>
+                    <span class="value"><strong>16명</strong></span>
+                  </div>
                 </div>
-                <div>
+                  <div class="schedules-notice-box2">
+                    <div>오전 6명ㆍ오후10명 추가 가능</div>
+                    <div>일일 예약 정원 42명</div>
+                  </div>
+                </div>
+                <div id="box2-notice">
                     휴식 및 진료불가 시간에는<br>
                     신규 예약을 등록할 수 없습니다.
                 </div>
@@ -214,6 +246,10 @@ const calendarOptions = ref({
     margin-bottom: 20px;
 }
 
+#patients-title-sub {
+  color: #616E80;
+}
+
 #add-patient {
     margin-left: auto;
 }
@@ -221,29 +257,40 @@ const calendarOptions = ref({
 .schedules-board-container {
     display: flex;
     flex-direction: row;
-    /* align-items: center; -> 달력과 카드의 높이가 다르면 어색할 수 있으므로 상단 정렬(stretch나 flex-start)을 추천합니다 */
     align-items: flex-start; 
-    gap: 20px; /* 달력과 카드 사이의 간격 */
+    gap: 20px;
     width: 100%;
 }
 
-/* 1. 달력이 들어있는 첫 번째 div */
 .schedules-board-container > div:first-child {
-    flex: 1; /* 남은 가로 공간을 최대한 차지하도록 설정 */
-    min-width: 0; /* flex 자식 요소의 찌그러짐 방지 */
+    flex: 1;
+    min-width: 0;
 }
 
-/* 2. 카드가 들어있는 두 번째 div */
 .schedules-board-container > div:last-child {
-    flex-shrink: 0; /* 카드가 지정된 크기(480px)보다 줄어들지 않도록 고정 */
+    flex-shrink: 0;
     width: 11%;
     background-color: white;
 }
 
-.daily-notice-box {
+#schedules-summary-info {
+    color: #8c92a4;
+    font-size: 14px;
+    margin-top: 0;
+    border: 1px solid #ebeef5;
+    border-radius: 0 0 12px 12px;
+    padding: 12px;
+}
+
+.daily-notice-container {
     padding: 25px;
     border: 1px solid #ebeef5;
     border-radius: 15px 15px 15px 15px;
+}
+
+.notice-subinfo {
+  color: #596474;
+  margin-top: 0;
 }
 
 .warning-board {
@@ -256,4 +303,94 @@ const calendarOptions = ref({
     font-size: 13px;
     gap: 8px;
 }
+
+/* 알림 영역 */
+.notice-time-area {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 1px solid #E2E8F0;
+  padding-top: 15px;
+}
+
+.notice-time-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.value {
+  font-size: 16px;
+  font-weight: 400;
+  color: #111;
+  text-align: right;
+}
+
+.time-muted-row .label,
+.time-muted-row .value {
+  color: #8c92a4;
+}
+
+.time-header-row {
+  justify-content: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.time-header-row .label {
+  color: #666;
+}
+.time-header-row .value {
+  color: #666;
+}
+
+.schedules-notice-smallbox {
+  background-color: #ECF5FF;
+  border: 1px solid;
+  border: none;
+  border-radius: 15px;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.schedules-notice-box1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.notice-box-row {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+.notice-box-row .label {
+  color: #1E56B8;
+}
+
+.notice-box-row .value {
+  color: #1E56B8;
+}
+
+.schedules-notice-box2 {
+  color: #616E80;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+#box2-notice {
+  color: #8c92a4;
+  font-size: 13px;
+}
+
 </style>
