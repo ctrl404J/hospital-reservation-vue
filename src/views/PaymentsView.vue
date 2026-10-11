@@ -176,7 +176,7 @@ const payStateOptions = [
 }
 
 #payments-title-sub {
-    color: #8c92a4;
+    color: #616E80;
 }
 
 .payments-input-container {
