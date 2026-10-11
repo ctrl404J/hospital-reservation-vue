@@ -1,9 +1,9 @@
 <template>
     <div class="patients-container">
         <div class="patients-title-area">
-            <div class="title-box">
+            <div>
                 <h2><el-icon><UserFilled /></el-icon> 환자목록</h2>
-                <p style="color: #8c92a4;">등록된 환자의 기본 정보와 최근 내원 기록을 한눈에 확인하세요.</p>
+                <p id="patients-title-sub">등록된 환자의 기본 정보와 최근 내원 기록을 한눈에 확인하세요.</p>
             </div>
             <el-button size="large" :icon="Plus" type="primary" id="add-patient">환자등록</el-button>
         </div>
@@ -116,6 +116,10 @@ const visitOptions = [
     flex-direction: row;
     align-items: center;
     margin-bottom: 20px;
+}
+
+#patients-title-sub {
+    color: #616E80;
 }
 
 #add-patient {
