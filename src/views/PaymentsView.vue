@@ -45,7 +45,6 @@
                 <el-button size="large" :icon="RefreshLeft">초기화</el-button>
             </div>
         </div>
-
         <div class="payments-contents-container">
             <div class="payments-board-area">
                 <div class="payments-status-area">
@@ -54,17 +53,17 @@
                         <el-tag
                             round
                             style="
-                            background-color: #ecf5ff; /* 연한 살구/미색 배경색 */
-                            border-color: #ecf5ff;     /* 테두리 선을 배경과 통일해서 없앰 */
-                            color: #409eff;            /* 직관적인 갈색 글자색 */
-                            font-weight: 500;          /* 글자 두께 선명하게 */
+                            background-color: #ecf5ff;
+                            border-color: #ecf5ff;
+                            color: #409eff;
+                            font-weight: 500;
                             margin-left: 12px;
                             "
                         >
                         <strong>6건</strong>
                         </el-tag>
                     </div>
-                    <div id="treatment-status-notice">10. 07.  · 진료시간순</div>
+                    <div id="medical-status-notice">10. 07.  · 진료시간순</div>
                 </div>
                 <Dashboard />
                 <div class="pagination-area">
@@ -72,7 +71,6 @@
                     <el-pagination class="pagination" layout="prev, pager, next" :total="100" />
                 </div>
             </div>
-            <!-- 진료비 상세 및 수납 -->
             <div class="payments-notice-container">
                 <div class="payments-notice-header">
                     <strong>진료비 상세 및 수납</strong>
@@ -80,39 +78,64 @@
                         <el-tag
                             round
                             style="
-                            background-color: #fdf5e6; /* 연한 살구/미색 배경색 */
-                            border-color: #fdf5e6;     /* 테두리 선을 배경과 통일해서 없앰 */
-                            color: #8b5a2b;            /* 직관적인 갈색 글자색 */
-                            font-weight: 500;          /* 글자 두께 선명하게 */
+                            background-color: #fdf5e6;
+                            border-color: #fdf5e6;
+                            color: #8b5a2b;
+                            font-weight: 500;
                             "
                         >
                             미수납
                         </el-tag>
                     </div>
                 </div>
-                <hr>
-                <!--  -->
-                <div>
+                <div class="payments-notice-body">
+                    <div class="payer-header-box">
+                        <h3 id="payer-name"><strong>홍길동</strong></h3>
+                        <div class="payer-info">환자번호 2026-0101 · 정형외과 / 김닥터</div>
+                        <div class="payer-info">진료일 2026. 10. 07. (수) 09:30</div>
+                    </div>
+
+                    <div class="medical-items-headr">
+                        <span class="label">진료항몽</span>
+                        <span class="value">금액</span>
+                    </div>
+                    <div class="medical-items-body">
+                        <div class="medical-items-row">
+                            <span class="label">진찰료</span>
+                            <span class="value">25,000원</span>
+                        </div>
+                        <div class="medical-items-row">
+                            <span class="label">영상검사료</span>
+                            <span class="value">40,000원</span>
+                        </div>
+                        <div class="medical-items-row">
+                            <span class="label">처치료</span>
+                            <span class="value">20,000원</span>
+                        </div>
+                    </div>
                     
-                    <h3><strong>홍길동</strong></h3>
-                    <div>
-                        <div>환자번호 2026-0101 · 정형외과 / 김닥터</div>
-                        <div>진료일 2026. 10. 07. (수) 09:30</div>
+                    <div class="total-amount">
+                        <strong>총진료비</strong><span>150,000원</span>
                     </div>
-                    <div>
-                        <div>진료항몽<span style="margin-left:150px">금액</span></div>
-                        <div>진찰료<span style="margin-left:150px">25,000원</span></div>
-                        <div>영상검사료<span style="margin-left:150px">40,000원</span></div>
-                        <div>처치료<span style="margin-left:150px">20,000원</span></div>
-
-                        <hr>
-                        <div><strong>총진료비</strong><span style="margin-left:150px">150,000원</span></div>
-                        <div>보험 부담금<span style="margin-left:150px">59500원</span></div>
-                        <div>본인부담금<span style="margin-left:150px">25500</span></div>
-                        <div>기수납액<span style="margin-left:150px">0원</span></div>
-
-                        <div>미수납 잔액<span style="margin-left:150px">35500원</span></div>
-                    </div>
+                        <div class="payment-detail-box">
+                            <div class="payment-detail-row">
+                                <span class="label">보험 부담금</span>
+                                <span class="value">59500원</span>
+                            </div>
+                            <div class="payment-detail-row">
+                                <span class="label">본인부담금</span>
+                                <span class="value">25500원</span>
+                            </div>
+                            <div class="payment-detail-row">
+                                <span class="label">기수납액</span>
+                                <span class="value">0원</span>
+                            </div>
+                        </div>
+                        <div class="unpaid-box">
+                            <span class="label">미수납 잔액</span>
+                            <span class="value"><strong>35500원</strong></span>
+                        </div>
+                    
                     <div>
                         <strong>결제 방법</strong>
                         <div class="payments-button-group">
@@ -121,20 +144,17 @@
                             <el-button type="primary" size="large" plain>계좌이체</el-button>
                         </div>
                     </div>
-                    <div class="final-payments-input">
-                        <div>수납 예정금액</div>
-                        <el-input v-model="input" style="width: 240px" size="large" placeholder="25500원"/>
+                    <div class="total-amount-box">
+                        <div class="label">수납 예정금액</div>
+                        <el-input v-model="totalAmount" size="large" class="total-amount-input"/>
                     </div>
                     <div>
-                        <el-button size="large" :icon="SwitchButton" type="primary">25500원 수납 처리</el-button>
+                        <el-button size="large" :icon="SwitchButton" type="primary" id="total-amount-button">25500원 수납 처리</el-button>
                     </div>
                     <br>
-                    <div>수납 후 잔액 0원 · 영수증 발급 가능</div>
+                    <div id="payment-notice-text">수납 후 잔액 0원 · 영수증 발급 가능</div>
                 </div>
             </div>
-            <!-- -->
-
-            
         </div>
         <div class="dashboard-warning-area">
             <el-icon><InfoFilled /></el-icon> 
@@ -144,6 +164,7 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import { Download, RefreshLeft, Search, InfoFilled } from '@element-plus/icons-vue';
 import StatsCard from '@/components/StatsCard.vue';
 import Dashboard from '@/components/Dashboard.vue';
@@ -162,7 +183,9 @@ const payStateOptions = [
     label: '미납',
   },
 ];
-  
+
+const totalAmount = ref("25500원");
+
 </script>
 <style scoped>
 .payments-title-area {
@@ -236,7 +259,7 @@ const payStateOptions = [
     width: 20%;
     border: 1px solid #ebeef5;
     border-radius: 12px;
-    padding: 25px;
+    /* padding: 25px; */
     background-color: white;
 }
 
@@ -244,18 +267,140 @@ const payStateOptions = [
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px 25px 15px 25px;
+    border-bottom: 1px solid #ebeef5;
 }
+
+.payments-notice-body {
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+    padding: 5px 25px 25px 25px;
+}
+
+#payer-name {
+    margin: 0;
+    padding: 10px 10px 0 0;
+}
+
+.payer-header-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.payer-info {
+    font-size: 13px;
+    color: #596474;
+    margin-top: 6px;
+}
+
+.medical-items-headr {
+    display: flex;
+    justify-content: space-between;
+    background-color: #F7F9FB;
+    margin-top: 20px;
+    margin-bottom: 12px;
+    color: #596474;
+}
+
+.medical-items-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.medical-items-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.medical-items-row .label {
+    color: #596474;
+}
+
+.total-amount {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    margin-bottom: 12px;
+}
+
+.payment-detail-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.payment-detail-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment-detail-row .label {
+    color: #596474;
+}
+
+.unpaid-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ECF5FF;
+    margin: 20px 0 20px 0;
+    padding: 15px;
+    color: #409EFF;
+    border-radius: 10px;
+}
+
+.unpaid-box .value {
+    font-size: 20px;
+}
+
 
 .payments-input-area {
     flex: 1;
 }
 
-.final-payments-input {
+.payments-button-group {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.payments-button-group button.el-button {
+    flex: 1;
+}
+
+.total-amount-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 12px;
+    margin-top: 20px;
 }
 
+.total-amount-box .label {
+    color: #596474;
+}
+
+.total-amount-box .total-amount-input {
+    width: 180px;
+}
+
+.total-amount-input :deep(.el-input__wrapper input) {
+  text-align: right;
+}
+
+#total-amount-button {
+    width: 100%;
+    margin-top: 20px;
+    flex: 1;
+}
+
+#payment-notice-text {
+    color: #596474;
+    font-size: 13px;
+}
 
 </style>
