@@ -50,9 +50,9 @@
                 <el-button size="large" :icon="Refresh" type="primary">검색</el-button>
                 <el-button size="large" :icon="Refresh">초기화</el-button>
             </div>
-            <div class="treatment-status-area">
-                <div class="treatment-status"><strong>전체환자 238명</strong></div>
-                <div id="treatment-status-notice">환자번호 내림차순</div>
+            <div class="patients-status-area">
+                <div class="patients-status"><strong>전체환자 238명</strong></div>
+                <div id="patients-status-notice">환자번호 내림차순</div>
             </div>
 
             <Dashboard />
@@ -174,7 +174,7 @@ const visitOptions = [
     flex-grow: 1;
 }
 
-.treatment-status-area {
+.patients-status-area {
     display: flex;
     justify-content: center;
     padding: 13px;
@@ -182,12 +182,12 @@ const visitOptions = [
     border: 1px solid #ebeef5;
 }
 
-.treatment-status {
+.patients-status {
     margin-right: auto;
     margin-left: 15px;
 }
 
-#treatment-status-notice {
+#patients-status-notice {
     color: #8c92a4;
     font-size: 14px;
 }
