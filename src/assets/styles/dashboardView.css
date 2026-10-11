@@ -65,7 +65,7 @@
     margin-right: 10px;
 }
 
-.treatment-status-area {
+.medical-status-area {
     display: flex;
     justify-content: center;
     padding: 13px;
@@ -73,12 +73,12 @@
     border: 1px solid #ebeef5;
 }
 
-.treatment-status {
+.medical-status {
     margin-right: auto;
     margin-left: 15px;
 }
 
-#treatment-status-notice {
+#medical-status-notice {
     color: #8c92a4;
     font-size: 14px;
 }
