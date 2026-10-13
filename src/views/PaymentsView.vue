@@ -67,7 +67,7 @@
                 </div>
                 <Dashboard />
                 <div class="pagination-area">
-                    <div id="dashboard-summary-info">현재 7명 표시 · 전체대기 6명 / 진료중 1명 </div>
+                    <div id="payments-summary-info">현재 7명 표시 · 전체대기 6명 / 진료중 1명 </div>
                     <el-pagination class="pagination" layout="prev, pager, next" :total="100" />
                 </div>
             </div>
