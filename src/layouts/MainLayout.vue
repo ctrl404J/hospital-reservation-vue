@@ -3,7 +3,7 @@
     <el-container class="common-container">
       <el-header class="common-header"><AppHeader /></el-header>
       <el-container>
-        <el-aside><AppSidebar /></el-aside>
+        <el-aside class="common-aside"><AppSidebar /></el-aside>
         <el-main class="common-main"><RouterView /></el-main>
       </el-container>
     </el-container>
