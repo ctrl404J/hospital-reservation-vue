@@ -65,8 +65,11 @@
 </template>
 
 <script setup>
-import '@/assets/styles/dashboardView.css';
+
 import { Plus, DataBoard, Search, Refresh, InfoFilled } from '@element-plus/icons-vue'
 import StatsCard from '@/components/StatsCard.vue';
 import Dashboard from '@/components/Dashboard.vue';
 </script>
+<style scoped>
+@import '@/assets/styles/dashboardView.css';
+</style>
