@@ -24,7 +24,7 @@
       </el-col>
     </el-row>
     <div class="side-info-container">
-      <div class="sideInfo-title">
+      <div class="side-info-title">
         <el-icon><QuestionFilled /></el-icon> 사용 안내 및 문의</div>
       <div class="side-info-box">
         <div class="side-info-content">
@@ -37,7 +37,7 @@
 </template>
 
 <script setup>
-import '@/assets/styles/appSidebar.css';
+
 import {
   DataBoard,
   User,
@@ -46,3 +46,6 @@ import {
   QuestionFilled
 } from '@element-plus/icons-vue'
 </script>
+<style coped>
+@import '@/assets/styles/appSidebar.css';
+</style>
