@@ -2,7 +2,7 @@
   <div class="side-menu-container">
     <el-row class="tac">
       <el-col :span="24">
-        <h5 class="menu-group-title">진료관리</h5>
+        <div class="menu-group-title">진료 관리</div>
         <el-menu default-active="2" class="menu">
           <el-menu-item index="1">
             <el-icon><DataBoard /></el-icon>

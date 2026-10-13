@@ -1,13 +1,18 @@
-  .side-menu-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
+.side-menu-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%; 
+  box-sizing: border-box; 
+  overflow: hidden;
+}
 
   .menu-group-title {
     padding-left: 25px;
     font-size: 15px;
-    margin-bottom: 12px;
+    /* margin-bottom: 12px; */
+    margin: 30px 0 10px 0;
+    font-size: 13px;
+    color: #596474;
   }
 
   .menu {
@@ -43,7 +48,7 @@
   }
 
   .side-info-box {
-    margin: 15px 15px 15px 15px;
+    margin: 15px;
     border-radius: 8px; 
     background-color: #F8FAFB;
     padding: 15px 15px 15px 20px;
