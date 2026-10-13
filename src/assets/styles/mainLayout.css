@@ -23,13 +23,15 @@ html, body, #app {
 .common-header {
   height: 85px;
   border-bottom: 1px solid #ebeef5;
+  padding: 0px 30px 0 30px;
+  overflow: hidden;
 }
 
 .common-main {
   flex: 1;
   min-width: 0;
   background-color: #F5F7F9;
-  padding: 20px 60px 0 60px;
+  padding: 20px 30px 0 30px;
   box-sizing: border-box;
   overflow-y: auto;
 }
