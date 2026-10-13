@@ -1,11 +1,12 @@
 <template>
     <div class="header-container">
-        <div class="header-title">
-            <h2>🏥 제네럴 헬스케어 전산망</h2>
-        </div>
-        <div class="reception-btn">
+        <div class="header-title-box">
+            <h2>🏥제네럴 헬스케어 전산망</h2>
             <el-button size="small">원무관리</el-button>
         </div>
+        <!-- <div class="reception-btn">
+            
+        </div> -->
         <el-space class="header-info-box" :size="10" spacer="|">
             <div class="logout-aria">
                 <div>김민정님</div>
@@ -22,3 +23,4 @@
 import '@/assets/styles/appHeader.css';
 import { SwitchButton } from '@element-plus/icons-vue';
 </script>
+
